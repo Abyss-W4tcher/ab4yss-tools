@@ -8,6 +8,9 @@ echo 'Usage : script.sh local_port_used_by_ngrok dummy_interface_name (optional)
 #Check if packet 'jq' is installed
 dpkg -s jq &> /dev/null || { echo "jq packet not found ! Installing it..." ; sudo apt-get install jq; }
 
+#Check if packet 'socat' is installed
+dpkg -s socat &> /dev/null || { echo "socat packet not found ! Installing it..." ; sudo apt-get install socat; }
+
 #Get ngrok public url from localhost and parse the json result
 get_ngrok_public_url=$(curl -s 127.0.0.1:4040/api/tunnels | jq '.tunnels[0]."public_url"')
 
