@@ -30,7 +30,7 @@ For now, you'll have to be sure that the `.zshrc` or `.bashrc` path is right eve
 [TODO] : Improve the configuration file detection, allows the user to pass it as an argument.
 
 
-## "Meterpreter session"/"Metasploit" with ngrok
+## "Meterpreter session"/"Metasploit" via ngrok
 
 Getting a meterpreter tcp session could be a real nightmare behind a router you don't control, or just don't want to setup. 
 To bypass that, you may have tried to use ngrok as a "VPS", in a normal reverse shell setup. However, metasploit needs to listen on a local interface, and doesn't seem to have some sort of "ngrok compatibility".
