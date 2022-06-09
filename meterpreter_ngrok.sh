@@ -11,6 +11,9 @@ dpkg -s jq &> /dev/null || { echo "jq packet not found ! Installing it..." ; sud
 #Check if packet 'socat' is installed
 dpkg -s socat &> /dev/null || { echo "socat packet not found ! Installing it..." ; sudo apt-get install socat; }
 
+#Check if packet 'curl' is installed
+dpkg -s curl &> /dev/null || { echo "curl packet not found ! Installing it..." ; sudo apt-get install curl; }
+
 #Get ngrok public url from localhost and parse the json result
 get_ngrok_public_url=$(curl -s 127.0.0.1:4040/api/tunnels | jq '.tunnels[0]."public_url"')
 
