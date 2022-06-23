@@ -63,7 +63,7 @@ vol2_docker() {
         command='
         sudo apt-get install docker.io -y &&
         sudo docker pull sk4la/volatility &&
-        echo "alias vol2d='"'"'sudo docker run -v /:/a sk4la/volatility'"'"'" >>~/.zshrc'
+        echo "alias vol2d='"'"'sudo docker run --rm -v /:/a sk4la/volatility'"'"'" >>~/.zshrc'
         eval $command
         check_install $? 'docker volatility2'
     else
@@ -77,7 +77,7 @@ vol3_docker() {
         command='
         sudo apt-get install docker.io -y &&
         sudo docker pull sk4la/volatility3 &&
-        echo "alias vol3d='"'"'sudo docker run -v /:/a sk4la/volatility3'"'"'" >>~/.zshrc'
+        echo "alias vol3d='"'"'sudo docker run --rm -v /:/a sk4la/volatility3'"'"'" >>~/.zshrc'
         eval $command
         check_install $? 'docker volatility3'
     else
