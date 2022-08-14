@@ -23,8 +23,8 @@ For now, you'll have to be sure that the `.zshrc` or `.bashrc` path is right eve
 "options:"
 "vol2_local     Install latest volatility2 github master on the system"
 "vol3_local     Install latest volatility3 github master on the system"
-"vol2_docker    Setup volatility2 docker image. Use /a/[FULL_PATH_TO_FILE] for --file argument when using vol2 after install."
-"vol3_docker    Setup volatility3 docker image. Use /a/[FULL_PATH_TO_FILE] for -f argument when using vol3 after install."
+"vol2_docker    Setup volatility2 docker image. Use /a/$(readlink -f {{filename}}) for -f argument when using vol2 after install."
+"vol3_docker    Setup volatility3 docker image. Use /a/$(readlink -f {{filename}}) for -f argument when using vol3 after install."
 ```
 
 [TODO] : Improve the configuration file detection, allows the user to pass it as an argument.
@@ -42,7 +42,7 @@ Here is an example :
 1. Start ngrok in another terminal : `ngrok tcp 4444`. e.g. : you get "7.tcp.eu.ngrok.io:17500"
 2. Launch the script, which will create a dummy interface (ngrok public IP as address) and a socat port forwarder (local port 4444 -> local port 17500)
 3. Specify ngrok IP as LHOST and ngrok port as LPORT in metasploit
-4. Launch the exploit
+4. Launch your exploit
 5. Victim executes reverse TCP payload and tries to instantiate handshake with ngrok
 6. ngrok transfers the traffic to you through the tunnel
 7. You receive it on port 4444
