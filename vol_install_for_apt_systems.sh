@@ -9,8 +9,8 @@ Help() {
     echo "options:"
     echo "vol2_local     Install latest volatility2 github master on the system"
     echo "vol3_local     Install latest volatility3 github master on the system"
-    echo "vol2_docker    Setup volatility2 docker image. Use /a/[FULL_PATH_TO_FILE] for --file argument when using vol2 after install."
-    echo "vol3_docker    Setup volatility3 docker image. Use /a/[FULL_PATH_TO_FILE] for -f argument when using vol3 after install."
+    echo "vol2_docker    Setup volatility2 docker image. Use /a/\$(readlink -f {{filename}}) for -f argument when using vol2 after install."
+    echo "vol3_docker    Setup volatility3 docker image. Use /a/\$(readlink -f {{filename}}) for -f argument when using vol3 after install."
 }
 
 check_install() {
