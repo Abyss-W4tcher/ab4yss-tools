@@ -27,6 +27,11 @@ For now, you'll have to be sure that the `.zshrc` or `.bashrc` path is right eve
 "vol3_docker    Setup volatility3 docker image. Use /a/$(readlink -f {{filename}}) for -f argument when using vol3 after install."
 ```
 
+### Docker example :
+You may need to execute it with sudo, if "docker" is not in the sudoers (https://docs.docker.com/engine/install/linux-postinstall/).
+
+`vol2d -f /a/$(readlink -f mydump.img) imageinfo`
+
 [TODO] : Improve the configuration file detection, allows the user to pass it as an argument.
 
 
