@@ -4,7 +4,7 @@ You'll find tools and scripts that I coded to simplify your life. You can improv
 
 ## Volatility easy install
 
-Bored of having to pass more time installing volatility than actually using it ? I created a small script that allows you to install it with all needed dependencies easily !
+Bored of having to spend more time installing volatility than actually using it ? I created a small script that allows you to install it with all needed dependencies easily !
 
 You can choose four options :
 
