@@ -11,8 +11,7 @@ You can choose four options :
 - Volatility 2 and/or 3 classic install : installs volatility on your machine, like you would do normally
 - Volatility 2 and/or 3 docker setup (from https://hub.docker.com/r/sk4la/volatility) : fetchs a volatility image and allows you to launch it in a volatile way (get it ?)
 
-I suggest you to choose the docker versions, which includes everything needed and doesn't install all the libraries on the local filesystem.
-For now, you'll have to be sure that the `.zshrc` or `.bashrc` path is right everywhere it is used in the script. I plan to make it as a direct argument soon.
+I suggest you to choose the docker versions, which includes everything needed and doesn't install all the libraries on the local filesystem. However, it appears to be a bit slower than a full local installation.
 
 **Help** :
 
@@ -28,11 +27,9 @@ For now, you'll have to be sure that the `.zshrc` or `.bashrc` path is right eve
 ```
 
 ### Docker example :
-You may need to execute it with sudo, if "docker" is not in the sudoers (https://docs.docker.com/engine/install/linux-postinstall/).
+You may need to execute it with sudo, if "docker" is not in the sudoers (https://docs.docker.com/engine/install/linux-postinstall/). You must use the '/a/{{full_path}}' file format to tell Docker where to find/export files.
 
 `vol2d -f /a/$(readlink -f mydump.img) imageinfo`
-
-[TODO] : Improve the configuration file detection, allows the user to pass it as an argument.
 
 
 ## "Meterpreter session"/"Metasploit" via ngrok
