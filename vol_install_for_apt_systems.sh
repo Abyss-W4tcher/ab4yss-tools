@@ -39,7 +39,10 @@ vol2_local() {
     if ! grep -q 'vol2=' "$rc_file"; then
         echo 'Installing volatility2 from https://github.com/volatilityfoundation/volatility.git...'
         command='
-        sudo apt-get install build-essential autoconf dwarfdump git subversion pcregrep libpcre++-dev python2-dev python-pip -y &&
+        sudo apt-get install build-essential autoconf dwarfdump git subversion pcregrep libpcre++-dev python2-dev -y &&
+        wget https://bootstrap.pypa.io/pip/2.7/get-pip.py -P /tmp &&
+        python2 /tmp/get-pip.py &&
+        rm /tmp/get-pip.py &&
         pip2 install distorm3 yara-python pycryptodome pillow openpyxl ujson &&
         mkdir -p $HOME/Tools &&
         cd $HOME/Tools &&
