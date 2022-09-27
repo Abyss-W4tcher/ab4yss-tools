@@ -1,7 +1,7 @@
 #!/bin/bash
 #Author : Abyss Watcher
 
-echo 'This script will allow you to get meterpreter sessions without port forwaring your router.
+echo 'This script will allow you to get meterpreter sessions without port forwarding your router.
 Just launch ngrok in another terminal and pass the local port as first parameter of this script.
 Usage : meterpreter_ngrok.sh local_port_used_by_ngrok dummy_interface_name (optional). Ex: meterpreter_ngrok.sh 4444 ethngrok'
 
