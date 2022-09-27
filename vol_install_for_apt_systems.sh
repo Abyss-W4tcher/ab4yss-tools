@@ -1,18 +1,16 @@
 #!/bin/bash
 # AUTHOR : Abyss Watcher
 
-
 # Global vars
 
-  if [ ! -z ${ZSH_VERSION+x} ]; then
+if [ ! -z ${ZSH_VERSION+x} ]; then
     rc_file="$HOME/.zshrc"
-  elif [ ! -z ${BASH_VERSION+x} ]; then
+elif [ ! -z ${BASH_VERSION+x} ]; then
     rc_file="$HOME/.bashrc"
-  else
+else
     echo "Shell is neither 'bash' nor 'zsh'. Try editing the 'rc_file' variable directly."
     exit
-  fi
-
+fi
 
 Help() {
     # Display Help
@@ -132,6 +130,6 @@ if ((${#messages[@]})); then
     done
     echo -e "\n-----------------------------------\n"
     echo "You can now run \"source $rc_file\" to reload the shell and get the commands ready !"
-    else
-    	Help
+else
+    Help
 fi
