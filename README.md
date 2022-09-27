@@ -63,4 +63,4 @@ So you'll have to launch the script a second time, with taking care of modifying
 
 **Help** :
 
-`Usage : script.sh local_port_used_by_ngrok dummy_interface_name (optional). Ex: 4444 ethngrok`
+`Usage : meterpreter_ngrok.sh local_port_used_by_ngrok dummy_interface_name (optional). Ex: meterpreter_ngrok.sh 4444 ethngrok`
