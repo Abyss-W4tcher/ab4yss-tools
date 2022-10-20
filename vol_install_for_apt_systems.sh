@@ -41,6 +41,7 @@ vol2_local() {
         wget https://bootstrap.pypa.io/pip/2.7/get-pip.py -P /tmp &&
         python2 /tmp/get-pip.py &&
         rm /tmp/get-pip.py &&
+        pip2 install setuptools --upgrade &&
         pip2 install distorm3 yara-python pycryptodome pillow openpyxl ujson &&
         sudo git clone https://github.com/volatilityfoundation/volatility.git /opt/volatility &&
         sudo chown -R $USER:$USER /opt/volatility/ &&
