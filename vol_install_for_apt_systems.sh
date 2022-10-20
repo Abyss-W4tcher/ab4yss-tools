@@ -42,8 +42,7 @@ vol2_local() {
         python2 /tmp/get-pip.py &&
         rm /tmp/get-pip.py &&
         pip2 install distorm3 yara-python pycryptodome pillow openpyxl ujson &&
-        mkdir -p $HOME/Tools &&
-        cd $HOME/Tools &&
+        cd /opt/ &&
         git clone https://github.com/volatilityfoundation/volatility.git &&
         echo "alias vol2='"'"'python2 $HOME/Tools/volatility/vol.py'"'"'" >>'"$rc_file"
         eval $command
@@ -58,8 +57,7 @@ vol3_local() {
         echo 'Installing volatility3 from https://github.com/volatilityfoundation/volatility3.git...'
         command='
         sudo apt-get install python3-pip libsnappy-dev -y &&
-        mkdir -p $HOME/Tools &&
-        cd $HOME/Tools &&
+        cd /opt/ &&
         git clone https://github.com/volatilityfoundation/volatility3.git &&
         cd volatility3 &&
         pip3 install -r requirements.txt &&
