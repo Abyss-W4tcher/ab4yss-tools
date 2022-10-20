@@ -56,8 +56,7 @@ vol3_local() {
     if ! grep -q 'vol3=' "$rc_file"; then
         echo 'Installing volatility3 from https://github.com/volatilityfoundation/volatility3.git...'
         command='
-        sudo apt-get install python3-pip libsnappy-dev -y &&
-        cd /opt/ &&
+        sudo apt-get install python3 python3-pip libsnappy-dev -y &&
         sudo git clone https://github.com/volatilityfoundation/volatility3.git /opt/volatility3 &&
         sudo chown -R $USER:$USER /opt/volatility3/ &&
         pip3 install -r /opt/volatility3/requirements.txt &&
