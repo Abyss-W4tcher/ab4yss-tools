@@ -46,7 +46,8 @@ vol2_local() {
 
     echo 'Installing volatility2 from https://github.com/volatilityfoundation/volatility.git...'
     command='
-        sudo apt-get install build-essential autoconf dwarfdump git subversion pcregrep libpcre++-dev python2-dev -y &&
+        sudo apt install build-essential autoconf dwarfdump git subversion pcregrep libpcre++-dev &&
+        sudo apt install python2-dev -y || sudo apt install python-dev -y && # Package name differs on some systems
         wget https://bootstrap.pypa.io/pip/2.7/get-pip.py -P /tmp &&
         python2 /tmp/get-pip.py &&
         rm /tmp/get-pip.py &&
@@ -64,7 +65,7 @@ vol3_local() {
 
     echo 'Installing volatility3 from https://github.com/volatilityfoundation/volatility3.git...'
     command='
-        sudo apt-get install python3 python3-pip libsnappy-dev -y &&
+        sudo apt install python3 python3-pip libsnappy-dev -y &&
         sudo git clone https://github.com/volatilityfoundation/volatility3.git /opt/volatility3 &&
         sudo chown -R $USER:$USER /opt/volatility3/ &&
         pip3 install -r /opt/volatility3/requirements.txt'
@@ -78,7 +79,7 @@ vol2_docker() {
 
     echo 'Setup volatility2 docker from https://hub.docker.com/r/sk4la/volatility...'
     command='
-        sudo apt-get install docker.io -y &&
+        sudo apt install docker.io -y &&
         sudo docker pull sk4la/volatility'
     eval $command
     check_install $? 'docker volatility2'
@@ -90,7 +91,7 @@ vol3_docker() {
 
     echo 'Setup volatility3 docker from https://hub.docker.com/r/sk4la/volatility...'
     command='
-        sudo apt-get install docker.io -y &&
+        sudo apt install docker.io -y &&
         sudo docker pull sk4la/volatility3'
     eval $command
     check_install $? 'docker volatility3'
