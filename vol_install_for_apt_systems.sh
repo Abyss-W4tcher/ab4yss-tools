@@ -34,6 +34,7 @@ add_alias() {
 }
 
 check_install() {
+
     if [ $1 -eq 0 ]; then
         echo "Done installing $2 !"
     else
