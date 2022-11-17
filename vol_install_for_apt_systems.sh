@@ -47,7 +47,7 @@ vol2_local() {
     echo 'Installing volatility2 from https://github.com/volatilityfoundation/volatility.git...'
     command='
         sudo apt install build-essential autoconf dwarfdump git subversion pcregrep libpcre++-dev &&
-        sudo apt install python2-dev -y || sudo apt install python-dev -y && # Package name differs on some systems
+        sudo apt install python2-dev -y || sudo apt install python-dev -y && 
         wget https://bootstrap.pypa.io/pip/2.7/get-pip.py -P /tmp &&
         python2 /tmp/get-pip.py &&
         rm /tmp/get-pip.py &&
