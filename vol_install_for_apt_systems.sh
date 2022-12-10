@@ -43,6 +43,7 @@ check_install() {
     fi
 }
 
+# https://github.com/volatilityfoundation/volatility/wiki/Installation#dependencies
 vol2_local() {
 
     echo 'Installing volatility2 from https://github.com/volatilityfoundation/volatility.git...'
