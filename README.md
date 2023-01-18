@@ -13,17 +13,20 @@ You can choose four options :
 
 I suggest you to choose the docker versions, which includes everything needed and doesn't install all the libraries on the local filesystem. However, it appears to be a bit slower than a full local installation.
 
+The script also adds aliases in your ".bashrc" and ".zshrc" file. You can also run the docker container with your own command, or call volatility from "/opt/volatility(2/3)" directly.
+
 **Help** :
 
 ```
-"Volatility quick install"
-
-"Syntax: vol_install.sh [option(s)]"
-"options:"
-"vol2_local     Install latest volatility2 github master on the system"
-"vol3_local     Install latest volatility3 github master on the system"
-"vol2_docker    Setup volatility2 docker image. Use /a/$(readlink -f {{filename}}) for -f argument when using vol2 after install."
-"vol3_docker    Setup volatility3 docker image. Use /a/$(readlink -f {{filename}}) for -f argument when using vol3 after install."
+>>> Volatility easy install <<<
+Need to be run as root, for package installation. Additional packages (sudo, wget...) may be needed.
+Syntax: vol_install.sh VOL_USER [option(s)]
+Specify the user which will be using volatility as first argument. For docker usage, 'docker' group needs to be part of the 'sudo' group (or run the container as root).
+options:
+vol2_local     Install latest volatility2 github master on the system
+vol3_local     Install latest volatility3 github master on the system
+vol2_docker    Setup volatility2 docker image. Use '/a/$(readlink -f {{dumpfile}})' for volatility -f argument when using vol2 after install.
+vol3_docker    Setup volatility3 docker image. Use '/a/$(readlink -f {{dumpfile}})' for volatility -f argument when using vol3 after install.
 ```
 
 ### Docker example :
