@@ -6,7 +6,7 @@
 Help() {
     # Display Help
     echo ">>> Volatility easy install <<<"
-    echo "Need to be run as root, for dependencies installation. Additional packages (sudo, wget...) may be also installed."
+    echo "Need to be run as root, for dependencies installation. Additional packages (sudo, wget...) may also be installed."
     echo "Syntax: vol_install.sh VOL_USER [option(s)]"
     echo "Specify the user which will be using volatility as first argument. For docker usage, 'docker' group needs to be part of the 'sudo' group (or run the container as root)."
     echo "options:"
