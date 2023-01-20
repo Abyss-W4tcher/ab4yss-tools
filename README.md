@@ -13,13 +13,13 @@ You can choose four options :
 
 I suggest you to choose the docker versions, which includes everything needed and doesn't install all the libraries on the local filesystem. However, it appears to be a bit slower than a full local installation.
 
-The script also adds aliases in your ".bashrc" and ".zshrc" file. You can also run the docker container with your own command, or call volatility from "/opt/volatility(2/3)" directly.
+The script also adds aliases in your ".bashrc" and ".zshrc" files. You can also run the docker container with your own command, or call volatility from "/opt/volatility(2/3)" directly.
 
 **Help** :
 
 ```
 >>> Volatility easy install <<<
-Need to be run as root, for dependencies installation. Additional packages (sudo, wget...) may be also installed.
+Need to be run as root, for dependencies installation. Additional packages (sudo, wget...) may also be installed.
 Syntax: vol_install.sh VOL_USER [option(s)]
 Specify the user which will be using volatility as first argument. For docker usage, 'docker' group needs to be part of the 'sudo' group (or run the container as root).
 options:
