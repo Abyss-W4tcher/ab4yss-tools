@@ -69,7 +69,7 @@ vol3_local() {
 
     echo 'Installing volatility3 from https://github.com/volatilityfoundation/volatility3.git...'
     command='
-        apt install python3 python3-pip libsnappy-dev git sudo -y &&
+        apt install python3 python3-pip python3-dev libsnappy-dev git sudo -y &&
         git clone https://github.com/volatilityfoundation/volatility3.git /opt/volatility3 &&
         chown -R $VOL_USER:$VOL_USER /opt/volatility3/ &&
         sudo -u $VOL_USER pip3 install -r /opt/volatility3/requirements.txt'
