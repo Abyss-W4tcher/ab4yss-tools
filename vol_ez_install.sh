@@ -55,7 +55,7 @@ vol3_install() {
     wget https://github.com/Abyss-W4tcher/ab4yss-tools/raw/master/volatility/Dockerfile-vol3 -P ~/vol3/
     # Build container
     docker build -t vol3_dck -f ~/vol3/Dockerfile-vol3 ~/vol3
-    # Clone volatility2
+    # Clone volatility3
     git clone https://github.com/volatilityfoundation/volatility3.git ~/vol3/volatility3
     # Add aliases
     grep -q 'wvol' ~/.zshrc ~/.bashrc || add_rc 'wvol() { echo "/bind"$(readlink -f "$1"); }'
