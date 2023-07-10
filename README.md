@@ -45,7 +45,7 @@ To reference files from your host inside the container, please use the `$(wvol [
 
 
 
-\* If you do not want to run docker as rootless, just edit the aliases in your "bashrc" or "zshrc" file to prefix them with "sudo".
+\* If you do not want to run docker as rootless, just edit the aliases in your "bashrc" or "zshrc" file and prefix the docker commands with "sudo".
 
 
 ## "Meterpreter session"/"Metasploit" via ngrok
