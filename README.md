@@ -6,33 +6,46 @@ You'll find tools and scripts that I coded to simplify your life. You can improv
 
 Bored of having to spend more time installing volatility than actually using it ? I created a small script that allows you to install it with all needed dependencies easily !
 
-You can choose four options :
+One container for each version of volatility will be setup. The volatility code will be hosted directly on your host, in your home directory ("~/vol2" and "~/vol3"). Containers will be able to access it via a binded mount.
 
-- Volatility 2 and/or 3 classic install : installs volatility on your machine, like you would do normally
-- Volatility 2 and/or 3 docker setup (from https://hub.docker.com/r/sk4la/volatility) : fetchs a volatility image and allows you to launch it in a volatile way (get it ?)
 
-I suggest you to choose the docker versions, which includes everything needed and doesn't install all the libraries on the local filesystem. However, it appears to be a bit slower than a full local installation.
+Requirements :
 
-The script also adds aliases in your ".bashrc" and ".zshrc" files. You can also run the docker container with your own command, or call volatility from "/opt/volatility(2/3)" directly.
+- `docker` 
+- docker "rootless" (https://docs.docker.com/engine/security/rootless/) : no need to run docker as root here*
 
-**Help** :
+Usage : `bash vol_ez_install.sh`
 
-```
+```sh
 >>> Volatility easy install <<<
-Need to be run as root, for dependencies installation. Additional packages (sudo, wget...) may also be installed.
-Syntax: vol_install.sh VOL_USER [option(s)]
-Specify the user which will be using volatility as first argument. For docker usage, 'docker' group needs to be part of the 'sudo' group (or run the container as root).
+Syntax: vol_ez_install.sh [option(s)]
 options:
-vol2_local     Install latest volatility2 github master on the system
-vol3_local     Install latest volatility3 github master on the system
-vol2_docker    Setup volatility2 docker image. Use '/a/$(readlink -f {{dumpfile}})' for volatility -f argument when using vol2 after install.
-vol3_docker    Setup volatility3 docker image. Use '/a/$(readlink -f {{dumpfile}})' for volatility -f argument when using vol3 after install.
+vol2_local     Setup latest volatility2 github master on the system
+vol3_local     Setup latest volatility3 github master on the system
 ```
 
-### Docker example :
-You may need to execute it with sudo, if "docker" is not in the sudoers (https://docs.docker.com/engine/install/linux-postinstall/). You must use the '/a/{{full_path}}' file format to tell Docker where to find/export files.
+The script adds two aliases to your bashrc/zshrc, for smaller commands and better docker experience.
 
-`vol2d -f /a/$(readlink -f mydump.img) imageinfo`
+
+Example usage (from the docker host):
+
+```sh
+# vol2
+vol2d -f $(wvol dump.raw) --profile [profile_name] pslist
+
+# vol3
+vol3d -f $(wvol dump.raw) windows.pslist
+
+# Translates (without aliases) to :
+docker run --rm -v /:/bind/ vol2_dck python2 $(wvol ~/vol2/volatility2/vol.py) -f /bind/home/user/dump.raw --profile [profile_name] pslist
+docker run --rm -v /:/bind/ vol3_dck python3 $(wvol ~/vol3/volatility3/vol.py) -f /bind/home/user/dump.raw  windows.pslist
+```
+
+To reference files from your host inside the container, please use the `$(wvol [file_you_want_the_container_to_access])` syntax. Doing so, it translates to a path reachable by the container. It's basically a "readlink" command prefixed with the binded volume of the container.
+
+
+
+\* If you do not want to run docker as rootless, just edit the aliases in your "bashrc" or "zshrc" file to prefix them with "sudo".
 
 
 ## "Meterpreter session"/"Metasploit" via ngrok
