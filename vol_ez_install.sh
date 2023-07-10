@@ -77,7 +77,7 @@ for arg in "$@"; do
     fi
 done
 
-if [ "$check" ]; then
+if [ "$install" ]; then
     echo "You can now run \"exec \$SHELL\" to reload the shell and get the commands ready !"
 else
     Help
