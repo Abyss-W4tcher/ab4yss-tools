@@ -27,7 +27,7 @@ vol3_local     Setup latest volatility3 github master on the system
 The script adds two aliases to your bashrc/zshrc, for smaller commands and better docker experience.
 
 
-Example usage (from the docker host):
+Example usage (from the docker host) :
 
 ```sh
 # vol2
