@@ -3,8 +3,8 @@ Help() {
     echo ">>> Volatility easy install <<<"
     echo "Syntax: vol_ez_install.sh [option(s)]"
     echo "options:"
-    echo "vol2_local     Setup latest volatility2 github master on the system"
-    echo "vol3_local     Setup latest volatility3 github master on the system"
+    echo "vol2_install     Setup latest volatility2 github master on the system"
+    echo "vol3_install     Setup latest volatility3 github master on the system"
 }
 
 add_rc() {
@@ -77,7 +77,7 @@ for arg in "$@"; do
     fi
 done
 
-if [ "$install" ]; then
+if [ "$install" = true ]; then
     echo "You can now run \"exec \$SHELL\" to reload the shell and get the commands ready !"
 else
     Help
